@@ -1,0 +1,517 @@
+#from tkinter import*
+from tkinter import messagebox
+import tkinter as tk
+score=0
+#from tkinter import fileframe2
+i=0
+root=Tk()
+width = root.winfo_screenwidth()
+height = root.winfo_screenheight()
+root.geometry(f'{width}x{height}')
+root.config(bg='grey')
+#root.geometry("1400x1000")
+#root.config(bg='grey')
+
+canvas = Canvas(root,width=0, height=0, bg='black')
+canvas.pack(expand=YES, fill=BOTH)
+gif1 = PhotoImage(file='3.png')
+
+canvas.create_image(0, 0, image=gif1, anchor=NW)
+
+
+f=Frame(canvas,width=1300,height=400,bg='black')
+f.pack(side=TOP, pady=0)
+L=Label(f,text="WELCOME !!! it's ",font=('Lucida Handwriting',50,'bold'),fg='blue4',bg='pink')
+L.pack()
+
+f3=Frame(canvas,width=1300,height=400)
+f3.pack(side=BOTTOM,padx=0,pady=150)
+def frame9():
+    frame9 = Toplevel()
+    frame9.geometry("1400x1000")
+    canvas = Canvas(frame9,width=1300, height=900, bg='black')
+    
+
+
+    
+    canvas.pack(expand=YES, fill=BOTH)
+    gif1 = PhotoImage(file='10.png')
+    canvas.create_image(0, 0, image=gif1, anchor=NW)
+    root.mainloop()
+def frame8():
+    def mmm():
+        print (score)
+    def get_frame9():
+        import winsound
+        winsound.PlaySound("slide.wav", winsound.SND_ASYNC)
+        frame8.destroy()
+        frame9()
+    frame8 = Toplevel()
+    frame8.geometry("1400x1000")
+    canvas = Canvas(frame8,width=1300, height=900, bg='black')
+
+    
+    canvas.pack(expand=YES, fill=BOTH)
+    f2=Frame(canvas,width=1300,height=900)
+    f2.pack(side=TOP,padx=50)
+    gif1 = PhotoImage(file='12.png')
+    canvas.create_image(0, 0, image=gif1, anchor=NW)
+    f3=Frame(canvas,width=1300,height=500)
+    f3.pack(side=RIGHT,padx=0,pady=0)
+    b1=Button(f3, text="Next", bd=4,width=8,font=("TimesNewRoman",20),relief='flat',activebackground='red',state='normal',bg="green",command=get_frame9)
+    b1.grid(row=10,column=10)
+    gif2 = PhotoImage(file='SCORE_logo.png')
+    se1=Button(f2,image=gif2,bd=10,width=500,height=180,bg="orange",command =mmm)
+    se1.grid(row=10,column=10)
+    se1.pack(side=TOP)
+    root.mainloop()
+
+def frame7():
+    def get_frame8():
+        import winsound
+        winsound.PlaySound("slide.wav", winsound.SND_ASYNC)
+        frame7.destroy()
+        frame8()
+    def quit5():
+        
+        import winsound
+        winsound.PlaySound("slide.wav", winsound.SND_ASYNC)
+        frame7.destroy()
+        frame8()   
+    frame7 = Toplevel()
+    frame7.geometry("1400x1000")
+    canvas = Canvas(frame7,width=1300, height=900, bg='black')
+    
+    canvas.pack(expand=YES, fill=BOTH)
+    gif1 = PhotoImage(file='4.png')
+    #cover = resizeimage.resizecover(image,[200,100], validate = false)
+    f1=Frame(canvas,width=800,height=500,)
+    f1.pack(side=TOP,padx=50,pady=250)
+
+
+    canvas.create_image(10 ,20, image=gif1, anchor=NW)
+
+    v = tk.IntVar()
+    v.set(1)  # initializing the choice, i.e. Python
+
+    options5 = [
+        ("1 point"),
+        (" 2 point"),
+        ("3 point"),
+        (" none of these"),
+        
+    ]
+
+    def ShowChoice():
+        a = (v.get())
+        if (a==0):
+            score = score +100
+        else:
+            score = score -50
+
+    tk.Label(f1, 
+             text=""" a free throw is worth of""",font =("Lucid",20),
+             justify = tk.CENTER,
+             padx = 90).pack(anchor=tk.CENTER)
+
+    for val, option in enumerate(options5):
+        tk.Radiobutton(f1, 
+                      text=option,
+                       indicatoron = 0,
+                       font =("Lucid",20),
+                      width = 20,
+                      padx = 90,
+                      variable=v, 
+                      command=ShowChoice,
+                      value=val).pack(anchor=tk.CENTER)
+    f3=Frame(canvas,width=2400,height=500)
+    f3.pack(side=RIGHT,padx=100,pady=0)
+    b1=Button(f3, text="Next", bd=4,width=8,font=("TimesNewRoman",20),relief='flat',activebackground='red',state='normal',bg="green",command=get_frame8)
+    b1.grid(row=10,column=10)
+    f4=Frame(canvas,width=100,height=50)
+    f4.pack(side=LEFT,padx=100,pady=0)
+    b2=Button(f4, text="QUIT", bd=4,width=8,font=("TimesNewRoman",20),relief='flat',activebackground='green',state='normal',bg="red",command=quit5)
+    b2.grid(row=10,column=10)
+
+
+    root.mainloop()
+
+    
+def frame6():
+    def get_frame7():
+        import winsound
+        winsound.PlaySound("slide.wav", winsound.SND_ASYNC)
+        frame6.destroy()
+        frame7()
+    def quit4():
+        import winsound
+        winsound.PlaySound("slide.wav", winsound.SND_ASYNC)
+        frame6.destroy()
+        frame8()   
+    frame6 = Toplevel()
+    frame6.geometry("1400x1000")
+    canvas = Canvas(frame6,width=1300, height=900, bg='black')
+    canvas.pack(expand=YES, fill=BOTH)
+    gif1 = PhotoImage(file='4.png')
+    #cover = resizeimage.resizecover(image,[200,100], validate = false)
+    f1=Frame(canvas,width=800,height=500,)
+    f1.pack(side=TOP,padx=50,pady=250)
+
+
+    canvas.create_image(10 ,20, image=gif1, anchor=NW)
+
+    v = tk.IntVar()
+    v.set(1)  # initializing the choice, i.e. Python
+
+    options4= [
+        ("james naismith"),
+        (" willian morgan"),
+        (" jim thorpe"),
+        (" none of these"),
+        
+    ]
+
+    def ShowChoice():
+        a = (v.get())
+        if (a==0):
+            score = score +100
+        else:
+            score = score -50
+
+    tk.Label(f1, 
+             text=""" who made basketball""",font =("Lucid",20),
+             justify = tk.CENTER,
+             padx = 90).pack(anchor=tk.CENTER)
+
+    for val, option in enumerate(options4):
+        tk.Radiobutton(f1, 
+                      text=option,
+                       indicatoron = 0,
+                       font =("Lucid",20),
+                      width = 20,
+                      padx = 90,
+                      variable=v, 
+                      command=ShowChoice,
+                      value=val).pack(anchor=tk.CENTER)
+    f3=Frame(canvas,width=2400,height=500)
+    f3.pack(side=RIGHT,padx=100,pady=0)
+    b1=Button(f3, text="Next", bd=4,width=8,font=("TimesNewRoman",20),relief='flat',activebackground='red',state='normal',bg="green",command=get_frame7)
+    b1.grid(row=10,column=10)
+    f4=Frame(canvas,width=100,height=50)
+    f4.pack(side=LEFT,padx=100,pady=0)
+    b2=Button(f4, text="QUIT", bd=4,width=8,font=("TimesNewRoman",20),relief='flat',activebackground='green',state='normal',bg="red",command=quit4)
+    b2.grid(row=10,column=10)
+
+    root.mainloop()
+
+
+    
+    
+def frame5():    
+    def get_frame6():
+        import winsound
+        winsound.PlaySound("slide.wav", winsound.SND_ASYNC)
+        
+        
+        frame5.destroy()
+        frame6()
+    def quit3():
+        import winsound
+        winsound.PlaySound("slide.wav", winsound.SND_ASYNC)
+        frame5.destroy()
+        frame8()
+        
+    frame5 = Toplevel()
+    frame5.geometry("1400x1000")
+    canvas = Canvas(frame5,width=1300, height=900,bg='black')
+    gif1 = PhotoImage(file='4.png')
+    canvas.pack(expand=YES, fill=BOTH)
+    
+     
+    #cover = resizeimage.resizecover(image,[200,100], validate = false)
+    f1=Frame(canvas,width=800,height=500)
+    f1.pack(side=TOP,padx=50,pady=250)
+    canvas.create_image(10 ,20, image=gif1,anchor=NW)
+
+    v = tk.IntVar()
+    v.set(1)  # initializing the choice, i.e. Python
+
+    options3 = [
+        ("Euroleague"),
+        (" NIBA"),
+        ("FIBA"),
+        (" none of these"),
+        
+    ]
+
+    def ShowChoice():
+        a = (v.get())
+        if (a==2):
+            score = score +100
+        else:
+            score = score -50
+
+    tk.Label(f1, 
+             text="""What is the highest governing body of basket ball?""",font =("Lucid",20),
+             justify = tk.CENTER,
+             padx = 90).pack(anchor=tk.CENTER)
+
+    for val, option in enumerate(options3):
+        tk.Radiobutton(f1, 
+                      text=option,
+                       indicatoron = 0,
+                       font =("Lucid",20),
+                      width = 20,
+                      padx = 90,
+                      variable=v, 
+                      command=ShowChoice,
+                      value=val).pack(anchor=tk.CENTER)
+
+    f3=Frame(canvas,width=2400,height=500)
+    f3.pack(side=RIGHT,padx=100,pady=0)
+    b1=Button(f3, text="Next", bd=4,width=8,font=("TimesNewRoman",20),relief='flat',activebackground='red',state='normal',bg="green",command=get_frame6)
+    b1.grid(row=10,column=10)
+    f4=Frame(canvas,width=100,height=50)
+    f4.pack(side=LEFT,padx=100,pady=0)
+    b2=Button(f4, text="QUIT", bd=4,width=8,font=("TimesNewRoman",20),relief='flat',activebackground='green',state='normal',bg="red",command=quit3)
+    b2.grid(row=10,column=10)
+    root.mainloop()
+
+def frame4():
+    def get_frame5():
+        import winsound
+        winsound.PlaySound("slide.wav", winsound.SND_ASYNC)
+        frame4.destroy()
+        frame5()
+    def quit2():
+        import winsound
+        winsound.PlaySound("slide.wav", winsound.SND_ASYNC)
+        frame4.destroy()
+        frame8()
+    
+   
+    frame4 = Toplevel()
+    frame4.geometry("1400x1000")
+    canvas = Canvas(frame4,width=1300, height=900, bg='black')
+    canvas.pack(expand=YES, fill=BOTH)
+     
+    gif1 = PhotoImage(file='4.png')
+    #cover = resizeimage.resizecover(image,[200,100], validate = false)
+    f1=Frame(canvas,width=800,height=500)
+    f1.pack(side=TOP,padx=50,pady=250)
+
+
+    canvas.create_image(10 ,20, image=gif1, anchor=NW)
+
+    v = tk.IntVar()
+    v.set(1)  # initializing the choice, i.e. Python
+
+    options2 = [
+        ("1737"),
+        (" 1974"),
+        ("1891"),
+        (" none of these"),
+        
+    ]
+
+    def ShowChoice():
+        a = (v.get())
+        if (a==2):
+            score = score +100
+        else:
+            score = score -50
+
+    tk.Label(f1, 
+             text="""When was baketball made?""",font =("Lucid",20),
+             justify = tk.CENTER,
+             padx = 90).pack(anchor=tk.CENTER)
+
+    for val, option in enumerate(options2):
+        tk.Radiobutton(f1, 
+                      text=option,
+                       indicatoron = 0,
+                       font =("Lucid",20),
+                      width = 20,
+                      padx = 90,
+                      variable=v, 
+                      command=ShowChoice,
+                      value=val).pack(anchor=tk.CENTER)
+    f3=Frame(canvas,width=2400,height=500)
+    f3.pack(side=RIGHT,padx=100,pady=0)
+    b1=Button(f3, text="Next", bd=4,width=8,font=("TimesNewRoman",20),relief='flat',activebackground='red',state='normal',bg="green",command=get_frame5)
+    b1.grid(row=10,column=10)
+    f4=Frame(canvas,width=100,height=50)
+    f4.pack(side=LEFT,padx=100,pady=0)
+    b2=Button(f4, text="QUIT", bd=4,width=8,font=("TimesNewRoman",20),relief='flat',activebackground='green',state='normal',bg="red",command=quit2)
+    b2.grid(row=10,column=10)
+
+
+    root.mainloop()
+
+    
+def frame1():
+    frame1=Toplevel()
+    frame1.geometry(f'{width}x{height}')
+    frame1.config(bg='grey')
+
+    canvas = Canvas(frame1,width=0, height=0, bg='black')
+    canvas.pack(expand=YES, fill=BOTH)
+    gif1 = PhotoImage(file='3.png')
+
+    canvas.create_image(0, 0, image=gif1, anchor=NW)
+
+
+    f=Frame(canvas,width=1300,height=400,bg='black')
+    f.pack(side=TOP, pady=0)
+    L=Label(f,text="WELCOME !!! it's ",font=('Lucida Handwriting',50,'bold'),fg='blue4',bg='pink')
+    L.pack()
+    f3=Frame(canvas,width=1300,height=400)
+    f3.pack(side=BOTTOM,padx=0,pady=150)
+    b1=Button(f3, text="Next", bd=4,width=8,font=("TimesNewRoman",20),relief='flat',activebackground='red',state='normal',bg="green",command=get_frame2)
+    b1.grid(row=10,column=10)
+    frame1.mainloop()
+def frame3():
+    def get_frame4():
+        import winsound
+        winsound.PlaySound("slide.wav", winsound.SND_ASYNC)
+        frame3.destroy()
+        frame4()
+    def quit1():
+        import winsound
+        winsound.PlaySound("slide.wav", winsound.SND_ASYNC)
+        frame3.destroy()
+        frame8()
+        
+        
+         
+    
+    frame3 = Toplevel()
+    frame3.geometry("1400x1000")
+    canvas = Canvas(frame3,width=1300, height=900, bg='black')
+    canvas.pack(expand=YES, fill=BOTH)
+    gif1 = PhotoImage(file='4.png')
+    #cover = resizeimage.resizecover(image,[200,100], validate = false)
+    f1=Frame(canvas,width=800,height=500,)
+    f1.pack(side=TOP,padx=50,pady=250)
+
+
+    canvas.create_image(10 ,20, image=gif1, anchor=NW)
+
+    v = tk.IntVar()
+    v.set(1)  # initializing the choice, i.e. Python
+
+    options1 = [
+        ("5 players"),
+        (" 10 players"),
+        ("15 players"),
+        (" none of these"),
+        
+    ]
+
+    def ShowChoice():
+
+        
+        a = (v.get())
+        if (a==1):
+            score = score +100
+        else:
+            score = score -50
+
+    tk.Label(f1, 
+             text="""there are total--------players on the basketball at one time""",font =("Lucid",20),
+             justify = tk.CENTER,
+             padx = 90).pack(anchor=tk.CENTER)
+
+    for val, option in enumerate(options1):
+        tk.Radiobutton(f1, 
+                      text=option,
+                       indicatoron = 0,
+                       font =("Lucid",20),
+                      width = 20,
+                      padx = 90,
+                      variable=v, 
+                      command=ShowChoice,
+                      value=val).pack(anchor=tk.CENTER)
+    f3=Frame(canvas,width=2400,height=500)
+    f3.pack(side=RIGHT,padx=100,pady=0)
+    b1=Button(f3, text="Next", bd=4,width=8,font=("TimesNewRoman",20),relief='flat',activebackground='red',state='normal',bg="green",command=get_frame4)
+    b1.grid(row=10,column=10)
+    f4=Frame(canvas,width=100,height=50)
+    f4.pack(side=LEFT,padx=100,pady=0)
+    b2=Button(f4, text="QUIT", bd=4,width=8,font=("TimesNewRoman",20),relief='flat',activebackground='green',state='normal',bg="red",command=quit1)
+    b2.grid(row=10,column=10)
+
+
+    frame3.mainloop()
+    
+def frame2():
+    def get_frame3():
+        import winsound
+        winsound.PlaySound("slide.wav", winsound.SND_ASYNC)
+        frame2.destroy()
+        frame3()
+
+    import winsound
+    winsound.PlaySound("slide.wav", winsound.SND_ASYNC)
+    frame2=Toplevel()
+    frame2.geometry("1400x1000")
+    frame2.config(bg='grey')
+
+    canvas= Canvas(frame2,width=0, height=0, bg='black')
+    canvas.pack(expand=YES, fill=BOTH)
+    gif1 = PhotoImage(file='13.png')
+
+    canvas.create_image(0,0, image=gif1, anchor=NW)
+
+
+    f01=Frame(canvas,width=1300,height=400,bg='black')
+    f01.pack(side=BOTTOM, pady=80,padx=260)
+    tk.Label(f01, text= 'Strict rules of quiz that need to followed:\n'
+                                    '==> finish button vll  end the quiz\n '
+                                    '==> for every correct 100 points are rewarded\n'
+                                    '==> for every wrong answer 50 will be deducted fro your score\n'
+                                    '==> skip button vll get into next question',padx = 90).pack(anchor=tk.CENTER)
+
+    #f03=Frame(canvas,width=100,height=40)
+    #f03.pack(side=RIGHT,padx=200)
+    from tkinter import messagebox
+    #f3=Frame(canvas,width=2400,height=500)
+    f3=Frame(canvas,width=2400,height=500)
+    f3.pack(side=BOTTOM,padx=0,pady=0)
+    b1=Button(f3, text="Next", bd=4,width=8,font=("TimesNewRoman",20),relief='flat',activebackground='red',state='normal',bg="green",command=get_frame3)
+    b1.grid(row=10,column=10)
+    frame2.mainloop()
+def get0() :
+    def get_frame2():
+        import winsound
+        winsound.PlaySound("slide.wav", winsound.SND_ASYNC)
+        frame1.destroy()
+        frame2()
+    import winsound
+
+    winsound.PlaySound("slide.wav", winsound.SND_ASYNC)
+    frame1=Toplevel()
+    frame1.geometry(f'{width}x{height}')
+    frame1.config(bg='grey')
+
+    canvas = Canvas(frame1,width=0, height=0, bg='black')
+    canvas.pack(expand=YES, fill=BOTH)
+    gif1 = PhotoImage(file='3.png')
+
+    canvas.create_image(0, 0, image=gif1, anchor=NW)
+
+
+    f=Frame(canvas,width=1300,height=400,bg='black')
+    f.pack(side=TOP, pady=0)
+    L=Label(f,text="WELCOME !!! it's ",font=('Lucida Handwriting',50,'bold'),fg='blue4',bg='pink')
+    L.pack()
+    f3=Frame(canvas,width=1300,height=400)
+    f3.pack(side=BOTTOM,padx=0,pady=150)
+    b1=Button(f3, text="Next", bd=4,width=8,font=("TimesNewRoman",20),relief='flat',activebackground='red',state='normal',bg="green",command=get_frame2)
+    b1.grid(row=10,column=10)
+    frame1.mainloop()
+
+b1=Button(f3, text="Next", bd=4,width=8,font=("TimesNewRoman",20),relief='flat',activebackground='red',state='normal',bg="green",command=frame2)
+b1.grid(row=10,column=10)
+root.mainloop()
+#root1.mainloop()
